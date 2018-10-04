@@ -1,0 +1,23 @@
+#
+# Start ioBroker Daemon
+#
+# /etc/systemd/system/iobroker.service
+# Invoking scripts to start/shutdown ioBroker
+
+[Unit]
+Description=ioBroker server task
+Requires=network.target
+
+[Service]
+
+User=root
+
+Type=forking
+RemainAfterExit=yes
+Restart=no
+
+ExecStart=/etc/init.d/iobroker
+
+[Install]
+WantedBy=multi-user.target
+
